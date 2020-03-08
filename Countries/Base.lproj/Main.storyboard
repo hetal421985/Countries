@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="shB-8z-aHi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,133 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cV-sY-wjK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNb-Db-6oj">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wNb-Db-6oj" secondAttribute="trailing" id="1UM-vw-MvD"/>
+                                    <constraint firstAttribute="bottom" secondItem="wNb-Db-6oj" secondAttribute="bottom" id="87J-re-WvZ"/>
+                                    <constraint firstItem="wNb-Db-6oj" firstAttribute="top" secondItem="3cV-sY-wjK" secondAttribute="top" constant="20" id="87O-kM-sce"/>
+                                    <constraint firstItem="wNb-Db-6oj" firstAttribute="leading" secondItem="3cV-sY-wjK" secondAttribute="leading" id="9V0-x4-VV9"/>
+                                    <constraint firstAttribute="height" constant="64" id="w9e-Z1-pyc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8po-Xf-ywC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-j9-FOO">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="EPX-bB-QEz"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-filter" translatesAutoresizingMaskIntoConstraints="NO" id="8al-30-t4A">
+                                        <rect key="frame" x="335" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="TsD-Fe-t8n"/>
+                                            <constraint firstAttribute="height" constant="20" id="s4s-fb-RuN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8al-30-t4A" firstAttribute="centerY" secondItem="ihg-j9-FOO" secondAttribute="centerY" id="HWE-cQ-dKn"/>
+                                    <constraint firstAttribute="trailing" secondItem="ihg-j9-FOO" secondAttribute="trailing" constant="20" id="ODM-N9-gBc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ihg-j9-FOO" secondAttribute="bottom" id="OiG-Zq-Adc"/>
+                                    <constraint firstAttribute="height" constant="50" id="Tbq-uU-AMm"/>
+                                    <constraint firstAttribute="trailing" secondItem="8al-30-t4A" secondAttribute="trailing" constant="20" id="bV2-nY-WzQ"/>
+                                    <constraint firstItem="ihg-j9-FOO" firstAttribute="leading" secondItem="8po-Xf-ywC" secondAttribute="leading" constant="20" id="eCk-m2-my1"/>
+                                    <constraint firstItem="ihg-j9-FOO" firstAttribute="top" secondItem="8po-Xf-ywC" secondAttribute="top" id="ptq-x2-F8U"/>
+                                </constraints>
+                            </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mxg-n9-Uxf">
+                                <rect key="frame" x="20" y="124" width="335" height="533"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Tcf-UL-63L"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JtX-5G-AZU"/>
+                                </connections>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Country Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abM-uj-fao">
+                                <rect key="frame" x="20" y="333" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8po-Xf-ywC" secondAttribute="trailing" id="5As-m9-a5l"/>
+                            <constraint firstItem="8po-Xf-ywC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABh-W8-TDv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mxg-n9-Uxf" secondAttribute="trailing" constant="20" id="Gb5-Ka-uMy"/>
+                            <constraint firstItem="abM-uj-fao" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lx2-4b-lak"/>
+                            <constraint firstItem="abM-uj-fao" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="P3o-qF-IzC"/>
+                            <constraint firstItem="8po-Xf-ywC" firstAttribute="top" secondItem="3cV-sY-wjK" secondAttribute="bottom" id="PA3-R4-yM2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3cV-sY-wjK" secondAttribute="trailing" id="QIF-dh-A8h"/>
+                            <constraint firstItem="3cV-sY-wjK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RiV-X7-l1q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mxg-n9-Uxf" secondAttribute="bottom" constant="10" id="UJt-za-hXu"/>
+                            <constraint firstItem="Mxg-n9-Uxf" firstAttribute="top" secondItem="8po-Xf-ywC" secondAttribute="bottom" constant="10" id="beJ-21-5wf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="abM-uj-fao" secondAttribute="trailing" constant="20" id="ktl-MZ-92n"/>
+                            <constraint firstItem="Mxg-n9-Uxf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="u63-u0-Fbe"/>
+                            <constraint firstItem="3cV-sY-wjK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uda-6W-LS0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kYO-Db-I8O"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="lblNoRecordFound" destination="abM-uj-fao" id="MTX-yi-O6k"/>
+                        <outlet property="tblViewCountryList" destination="Mxg-n9-Uxf" id="vgn-Ro-idN"/>
+                        <outlet property="txtFldCountrySearch" destination="ihg-j9-FOO" id="HFy-kO-GYX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="868" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="asF-jH-Rcn">
+            <objects>
+                <navigationController id="shB-8z-aHi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bDu-w0-4Nn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MTN-oZ-ZKp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJg-0n-3cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="113"/>
+        </scene>
+        <!--CountryDetailViewController-->
+        <scene sceneID="o6K-hu-QP4">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CountryDetailViewController" storyboardName="CountryDetailViewController" referencedIdentifier="CountryDetailViewController" id="BKQ-1X-HwT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-1E-nu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="-110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search-filter" width="16" height="16"/>
+    </resources>
 </document>
